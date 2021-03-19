@@ -1,4 +1,3 @@
-
 public class Human implements java.io.Serializable {
   int    age;
   String name;
