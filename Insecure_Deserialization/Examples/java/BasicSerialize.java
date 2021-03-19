@@ -4,16 +4,16 @@ import java.io.*;
 public class BasicSerialize {
   public static void main(String [] args) {
     try {
-      Planet earth = new Planet(3, "Earth", "Blue planet", 1);
-      String fname = "earth.ser";
+      Human being = new Human(23, "naveenj", "thevillagehacker", 68);
+      String fname = "being.ser";
       System.out.println("\nObject is");
-      System.out.println(earth);
+      System.out.println(being);
       
       // serializing an object
       FileOutputStream fout = new FileOutputStream(fname);
       ObjectOutputStream oout = new ObjectOutputStream(fout);
       System.out.println("\nSerialization Happening here ...");
-      oout.writeObject(earth);   // actual serialization
+      oout.writeObject(being);   // actual serialization
       oout.close();
       fout.close();
       System.out.println("\nThe object was written to " + fname);
@@ -22,11 +22,11 @@ public class BasicSerialize {
       FileInputStream fin = new FileInputStream(fname);
       ObjectInputStream oin = new ObjectInputStream(fin);
       System.out.println("\nDeserialization Happening here ...");
-      Planet planet = (Planet) oin.readObject();   // actual deserialization
+      Human Human = (Human) oin.readObject();   // actual deserialization
       oin.close();
       fin.close();      
       System.out.println("\nThe object was read from " + fname + ":");
-      System.out.println(planet);
+      System.out.println(Human);
       System.out.println();
 
     } catch (Exception e) {
@@ -34,4 +34,3 @@ public class BasicSerialize {
     }
   }
 }
-
